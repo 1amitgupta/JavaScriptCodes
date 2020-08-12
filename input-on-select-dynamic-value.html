@@ -1,0 +1,200 @@
+<!-- 
+This code used for select input field value dynamic with out re-loading and with out ajax request.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Customer</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+    integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="http://localhost/logelite.com/MyAdminMyPanel/order-to-customer/dist/css/style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-sm-12 mt-2">
+
+      </div>
+
+      <div class="col-sm-12 mt-5">
+        <h2>
+          Customer Add Form
+          <a href="http://localhost/logelite.com/MyAdminMyPanel/order-to-customer/../order-list.php"
+            class="btn btn-sm btn-danger float-right">Go to Back</a>
+        </h2>
+        <form action="" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="_token" value="NuV3mqWcrbVHJj8ZGrcIgC5AcBP6oEe2I2symU4M">
+          <div class="row">
+
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="user_email">Customer List:</label>
+
+                <select name="h1_user_id" class="form-control select2bs4">
+                  <option value="">--Select--</option>
+                  <option>C1</option>
+                  <option>C2</option>
+                  <option>C3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="user_email">Product Category:</label>
+
+                <select name="h1_user_id" id="cat1" class="form-control">
+                  <option value="">--Select--</option>
+                  <option value="5">Advertiser</option>
+                  <option value="7">Design Services</option>
+                  <option value="4">Email</option>
+                  <option value="42">Email Marketing</option>
+                  <option value="44">Products</option>
+                  <option value="6">Search Engine Optimization</option>
+                  <option value="3">SSL Certificates</option>
+                  <option value="8">Swifty Design</option>
+                  <option value="1">Web Hosting</option>
+                  <option value="2">Website Design</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="user_email">Product List:</label>
+                <select name="h1_user_id" id="cat2" class="form-control">
+                  <option value="">--Select--</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="user_email">Product Price:</label>
+                <select name="h1_user_id" id="cat3" class="form-control">
+                  <option value="">--Select--</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="user_fname">Customer First Name:</label>
+                <input type="text" name="user_fname" value="" class="form-control" id="user_fname">
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label style="width: 100%;">&nbsp;</label>
+                <button type="submit" class="btn btn-primary float-right mt-2">Save</button>
+              </div>
+            </div>
+
+          </div>
+
+
+        </form>
+      </div>
+
+      <div id="cat" style="display:none;"
+        data-catlist='[{"cat_id":9,"cat_name":"Linux Shared Hosting","cat_category":"1"},{"cat_id":10,"cat_name":"Windows Shared Hosting","cat_category":"1"},{"cat_id":11,"cat_name":"Linux Dedicated Server","cat_category":"1"},{"cat_id":12,"cat_name":"Windows Dedicated Server","cat_category":"1"},{"cat_id":38,"cat_name":"Virtual Cloud Server","cat_category":"1"},{"cat_id":39,"cat_name":"Starter Linux Shared Hosting","cat_category":"1"},{"cat_id":40,"cat_name":"Business Linux Shared Hosting","cat_category":"1"},{"cat_id":15,"cat_name":"Static Websites","cat_category":"2"},{"cat_id":16,"cat_name":"Dynamic Website","cat_category":"2"},{"cat_id":19,"cat_name":"Corporate","cat_category":"2"},{"cat_id":21,"cat_name":"E-Commerce","cat_category":"2"},{"cat_id":41,"cat_name":"Open Source Customisation","cat_category":"2"},{"cat_id":24,"cat_name":"GeoTrust SSL Certificate","cat_category":"3"},{"cat_id":25,"cat_name":"Rapid SSL Certificate","cat_category":"3"},{"cat_id":26,"cat_name":"Symantec SSL Certificate","cat_category":"3"},{"cat_id":27,"cat_name":"Thawte SSL Certificate","cat_category":"3"},{"cat_id":28,"cat_name":"Comodo SSL Certificate","cat_category":"3"},{"cat_id":22,"cat_name":"Personal Email","cat_category":"4"},{"cat_id":23,"cat_name":"Business Email","cat_category":"4"},{"cat_id":43,"cat_name":"Email Marketing Packages","cat_category":"42"},{"cat_id":45,"cat_name":"PHP Scripts","cat_category":"44"},{"cat_id":46,"cat_name":"Theme Templates","cat_category":"44"},{"cat_id":47,"cat_name":"PSD Templates","cat_category":"44"},{"cat_id":29,"cat_name":"Pay Per Click","cat_category":"5"},{"cat_id":30,"cat_name":"Cost Per Click","cat_category":"5"},{"cat_id":31,"cat_name":"Cost Per Lead","cat_category":"5"},{"cat_id":37,"cat_name":"SEO Packages","cat_category":"6"},{"cat_id":32,"cat_name":"Logo Design","cat_category":"7"},{"cat_id":33,"cat_name":"Brochure Banner","cat_category":"7"},{"cat_id":34,"cat_name":"Flash Banner Design","cat_category":"7"},{"cat_id":35,"cat_name":"Banner Design","cat_category":"7"},{"cat_id":36,"cat_name":"Swifty Design Packages","cat_category":"8"}]'>
+      </div>
+      <div id="catprice" style="display:none;"
+        data-catpricelist='[{"pro_id":10,"pro_cat_id":9,"pro_name":"Linux SRD500 Hosting","pro_price":0,"price":[{"pp_id":31,"pro_details_id":10,"pp_package":"1 Year","pp_price":299,"pp_discount":0},{"pp_id":29,"pro_details_id":10,"pp_package":"6 Months","pp_price":189,"pp_discount":0}],"product_price":[{"pp_id":31,"pro_details_id":10,"pp_package":"1 Year","pp_price":299,"pp_discount":0},{"pp_id":29,"pro_details_id":10,"pp_package":"6 Months","pp_price":189,"pp_discount":0}]},{"pro_id":26,"pro_cat_id":9,"pro_name":"Linux SRD1000 Hosting","pro_price":0,"price":[{"pp_id":39,"pro_details_id":26,"pp_package":"1 Year","pp_price":699,"pp_discount":0},{"pp_id":40,"pro_details_id":26,"pp_package":"6 Months","pp_price":399,"pp_discount":0}],"product_price":[{"pp_id":39,"pro_details_id":26,"pp_package":"1 Year","pp_price":699,"pp_discount":0},{"pp_id":40,"pro_details_id":26,"pp_package":"6 Months","pp_price":399,"pp_discount":0}]},{"pro_id":27,"pro_cat_id":9,"pro_name":"Linux SRD 2000 Hosting","pro_price":0,"price":[{"pp_id":41,"pro_details_id":27,"pp_package":"1 Year","pp_price":1249,"pp_discount":0},{"pp_id":42,"pro_details_id":27,"pp_package":"6 Months","pp_price":699,"pp_discount":0}],"product_price":[{"pp_id":41,"pro_details_id":27,"pp_package":"1 Year","pp_price":1249,"pp_discount":0},{"pp_id":42,"pro_details_id":27,"pp_package":"6 Months","pp_price":699,"pp_discount":0}]},{"pro_id":28,"pro_cat_id":9,"pro_name":"Linux SRD4000 Hosting","pro_price":0,"price":[{"pp_id":43,"pro_details_id":28,"pp_package":"1 Year","pp_price":1698,"pp_discount":0}],"product_price":[{"pp_id":43,"pro_details_id":28,"pp_package":"1 Year","pp_price":1698,"pp_discount":0}]},{"pro_id":29,"pro_cat_id":10,"pro_name":"Windows SRD4000 Hosting","pro_price":0,"price":[{"pp_id":44,"pro_details_id":29,"pp_package":"3 Months","pp_price":489,"pp_discount":0},{"pp_id":45,"pro_details_id":29,"pp_package":"6 Months","pp_price":899,"pp_discount":0}],"product_price":[{"pp_id":44,"pro_details_id":29,"pp_package":"3 Months","pp_price":489,"pp_discount":0},{"pp_id":45,"pro_details_id":29,"pp_package":"6 Months","pp_price":899,"pp_discount":0}]},{"pro_id":30,"pro_cat_id":10,"pro_name":"Windows SRD8000 Hosting","pro_price":0,"price":[{"pp_id":46,"pro_details_id":30,"pp_package":"1 Months","pp_price":249,"pp_discount":0},{"pp_id":49,"pro_details_id":30,"pp_package":"1 Year","pp_price":2109,"pp_discount":0},{"pp_id":47,"pro_details_id":30,"pp_package":"3 Months","pp_price":599,"pp_discount":0},{"pp_id":48,"pro_details_id":30,"pp_package":"6 Months","pp_price":1099,"pp_discount":0}],"product_price":[{"pp_id":46,"pro_details_id":30,"pp_package":"1 Months","pp_price":249,"pp_discount":0},{"pp_id":49,"pro_details_id":30,"pp_package":"1 Year","pp_price":2109,"pp_discount":0},{"pp_id":47,"pro_details_id":30,"pp_package":"3 Months","pp_price":599,"pp_discount":0},{"pp_id":48,"pro_details_id":30,"pp_package":"6 Months","pp_price":1099,"pp_discount":0}]},{"pro_id":1,"pro_cat_id":11,"pro_name":"Basic Dedicated Linux Server","pro_price":0,"price":[{"pp_id":1,"pro_details_id":1,"pp_package":"1 Month","pp_price":229,"pp_discount":0},{"pp_id":4,"pro_details_id":1,"pp_package":"1 Year","pp_price":1799,"pp_discount":0},{"pp_id":2,"pro_details_id":1,"pp_package":"3 Months","pp_price":559,"pp_discount":0},{"pp_id":3,"pro_details_id":1,"pp_package":"6 Months","pp_price":999,"pp_discount":0}],"product_price":[{"pp_id":1,"pro_details_id":1,"pp_package":"1 Month","pp_price":229,"pp_discount":0},{"pp_id":4,"pro_details_id":1,"pp_package":"1 Year","pp_price":1799,"pp_discount":0},{"pp_id":2,"pro_details_id":1,"pp_package":"3 Months","pp_price":559,"pp_discount":0},{"pp_id":3,"pro_details_id":1,"pp_package":"6 Months","pp_price":999,"pp_discount":0}]},{"pro_id":2,"pro_cat_id":11,"pro_name":"Standard Dedicated Linux Server","pro_price":0,"price":[{"pp_id":6,"pro_details_id":2,"pp_package":"1 Month","pp_price":259,"pp_discount":0},{"pp_id":9,"pro_details_id":2,"pp_package":"1 Year","pp_price":1900,"pp_discount":0},{"pp_id":7,"pro_details_id":2,"pp_package":"3 Month","pp_price":599,"pp_discount":0},{"pp_id":8,"pro_details_id":2,"pp_package":"6 Month","pp_price":1049,"pp_discount":0}],"product_price":[{"pp_id":6,"pro_details_id":2,"pp_package":"1 Month","pp_price":259,"pp_discount":0},{"pp_id":9,"pro_details_id":2,"pp_package":"1 Year","pp_price":1900,"pp_discount":0},{"pp_id":7,"pro_details_id":2,"pp_package":"3 Month","pp_price":599,"pp_discount":0},{"pp_id":8,"pro_details_id":2,"pp_package":"6 Month","pp_price":1049,"pp_discount":0}]},{"pro_id":3,"pro_cat_id":11,"pro_name":"Elite Dedicated Linux Server","pro_price":0,"price":[{"pp_id":20,"pro_details_id":3,"pp_package":"1 Month","pp_price":299,"pp_discount":0},{"pp_id":25,"pro_details_id":3,"pp_package":"1 Year","pp_price":2750,"pp_discount":0},{"pp_id":23,"pro_details_id":3,"pp_package":"3 Month","pp_price":779,"pp_discount":0},{"pp_id":24,"pro_details_id":3,"pp_package":"6 Month","pp_price":1409,"pp_discount":0}],"product_price":[{"pp_id":20,"pro_details_id":3,"pp_package":"1 Month","pp_price":299,"pp_discount":0},{"pp_id":25,"pro_details_id":3,"pp_package":"1 Year","pp_price":2750,"pp_discount":0},{"pp_id":23,"pro_details_id":3,"pp_package":"3 Month","pp_price":779,"pp_discount":0},{"pp_id":24,"pro_details_id":3,"pp_package":"6 Month","pp_price":1409,"pp_discount":0}]}]'>
+      </div>
+
+      <div class="col-sm-12 mt-5 mb-5">
+        <a href="http://localhost/logelite.com/MyAdminMyPanel/order-to-customer/../order-list.php"
+          class="btn btn-sm btn-danger">Go to Back</a>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+    integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
+    crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $('.select2bs4').select2({
+        theme: 'bootstrap4'
+      });
+
+      var subCatList = $('#cat').attr('data-catlist');
+      subCatList = JSON.parse(subCatList);
+      //console.log(subCatList);
+      var selected;
+
+      var sel = document.getElementById('cat2');
+
+      $('#cat1').on('change', function () {
+        selected = $(this).val();
+        //console.log(selected);
+        sel.querySelectorAll('*').forEach(n => n.remove());
+        addEmptyOption(sel);
+        subCatList.filter(filterSubCat);
+      });
+
+      const filterSubCat = function (val, index, arr, ex) {
+        let opt = document.createElement('option');
+        if (selected == val.cat_category) {
+          opt.appendChild(document.createTextNode(val.cat_name));
+          opt.value = val.cat_id;
+          sel.appendChild(opt);
+          //console.log('Sel ', val.cat_id);
+        }
+      }
+
+
+      var subCatList2 = $('#catprice').attr('data-catpricelist');
+      subCatList2 = JSON.parse(subCatList2);
+      var selected2;
+
+      var sel2 = document.getElementById('cat3');
+
+      $('#cat2').on('change', function () {
+        selected2 = $(this).val();
+        //console.log(selected);
+        sel2.querySelectorAll('*').forEach(n => n.remove());
+        addEmptyOption(sel2);
+        subCatList2.filter(filterSubCat2);
+      });
+
+      const filterSubCat2 = function (val, index, arr, ex) {
+        let opt = document.createElement('option');
+        if (selected2 == val.pro_cat_id) {
+          opt.appendChild(document.createTextNode(val.pro_name));
+          opt.value = val.pro_id;
+          sel2.appendChild(opt);
+          //console.log('Sel ', val.cat_id);
+        }
+      }
+
+      const addEmptyOption = function (select) {
+        let opt = document.createElement('option');
+        opt.appendChild(document.createTextNode('----------'));
+        opt.value = "";
+        select.appendChild(opt);
+      }
+
+    });
+  </script>
+
+
+  </div>
+</body>
+
+</html>
