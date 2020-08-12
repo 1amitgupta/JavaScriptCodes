@@ -1,7 +1,8 @@
 /**
- * This code set previous value for select input fields,
+ * This code set previous value to select input field,
  * when confirm prompt return false.
  */
+
 var val;
 $('.f1m-table').on('focus', '.helpstatusform', function() {
   val = $(this).val();
