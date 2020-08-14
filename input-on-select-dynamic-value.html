@@ -128,27 +128,26 @@ This code used for select input field value dynamic with out re-loading and with
     integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
     crossorigin="anonymous"></script>
   <script>
-    $(function () {
-      $('.select2bs4').select2({
-        theme: 'bootstrap4'
-      });
+    $(function() {
+      // $('.select2bs4').select2({
+      //   theme: 'bootstrap4'
+      // });
 
       var subCatList = $('#cat').attr('data-catlist');
       subCatList = JSON.parse(subCatList);
       //console.log(subCatList);
       var selected;
-
       var sel = document.getElementById('cat2');
 
-      $('#cat1').on('change', function () {
+      $('#cat1').on('change', function() {
         selected = $(this).val();
         //console.log(selected);
-        sel.querySelectorAll('*').forEach(n => n.remove());
-        addEmptyOption(sel);
+        removeOptions(2);
+        addEmptyOption(2);
         subCatList.filter(filterSubCat);
       });
 
-      const filterSubCat = function (val, index, arr, ex) {
+      const filterSubCat = function(val, index, arr, ex) {
         let opt = document.createElement('option');
         if (selected == val.cat_category) {
           opt.appendChild(document.createTextNode(val.cat_name));
@@ -162,32 +161,82 @@ This code used for select input field value dynamic with out re-loading and with
       var subCatList2 = $('#catprice').attr('data-catpricelist');
       subCatList2 = JSON.parse(subCatList2);
       var selected2;
-
       var sel2 = document.getElementById('cat3');
 
-      $('#cat2').on('change', function () {
+      $('#cat2').on('change', function() {
         selected2 = $(this).val();
         //console.log(selected);
-        sel2.querySelectorAll('*').forEach(n => n.remove());
-        addEmptyOption(sel2);
+        removeOptions(3);
+        addEmptyOption(3);
         subCatList2.filter(filterSubCat2);
       });
 
-      const filterSubCat2 = function (val, index, arr, ex) {
+      const filterSubCat2 = function(val, index, arr, ex) {
         let opt = document.createElement('option');
         if (selected2 == val.pro_cat_id) {
           opt.appendChild(document.createTextNode(val.pro_name));
           opt.value = val.pro_id;
           sel2.appendChild(opt);
-          //console.log('Sel ', val.cat_id);
+          console.log('Sel ', val);
         }
       }
 
-      const addEmptyOption = function (select) {
-        let opt = document.createElement('option');
-        opt.appendChild(document.createTextNode('----------'));
-        opt.value = "";
-        select.appendChild(opt);
+      var subCatList3 = $('#catprice').attr('data-catpricelist');
+      subCatList3 = JSON.parse(subCatList3);
+      var selected3;
+
+      var sel3 = document.getElementById('cat4');
+
+      $('#cat3').on('change', function() {
+        selected3 = $(this).val();
+        console.log(selected3);
+        removeOptions(4);
+        addEmptyOption(4);
+        subCatList3.filter(filterSubCat3);
+      });
+
+      const filterSubCat3 = function(val, index, arr, ex) {
+
+        if (selected3 == val.pro_id) {
+
+          if (val.pro_price == 0) {
+            val.product_price.forEach(
+              (item, index) => {
+                let opt = document.createElement('option');
+                opt.appendChild(document.createTextNode('$' + item.pp_price + ' @ ' + item.pp_package));
+                opt.value = item.pp_id;
+                sel3.appendChild(opt);
+              }
+            );
+          } else {
+            let opt = document.createElement('option');
+            opt.appendChild(document.createTextNode('$' + val.pro_price));
+            opt.value = val.pro_id;
+            sel3.appendChild(opt);
+          }
+          //console.log('Sel ', val);
+        }
+      }
+
+      //add null value option
+      const addEmptyOption = function(pos) {
+        let lim = 4;
+        for (; pos <= lim; pos++) {
+          let sel = document.getElementById('cat' + pos);
+          let opt = document.createElement('option');
+          opt.appendChild(document.createTextNode('----------'));
+          opt.value = "";
+          sel.appendChild(opt);
+        }
+      }
+
+      //remove options from select input
+      const removeOptions = function(pos) {
+        let lim = 4;
+        for (; pos <= lim; pos++) {
+          let sel = document.getElementById('cat' + pos);
+          sel.querySelectorAll('*').forEach(n => n.remove());
+        }
       }
 
     });
